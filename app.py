@@ -8,8 +8,8 @@ app= Flask(__name__)
 app.secret_key='wreyuiyhsfkdl972348v7897v9080kljvkjhgv8709HKJHG0jf'
 clinet =MongoClient()
 
-client = MongoClient("mongodb+srv://flyingphoneix:8X3XxDdtDN5oWtkv@cluster0.fkh5xnp.mongodb.net/?retryWrites=true&w=majority")
-
+# client = MongoClient("mongodb+srv://flyingphoneix:8X3XxDdtDN5oWtkv@cluster0.fkh5xnp.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient('mongodb://localhost:27017/')
 mydatabase = client['url_shortner']
 
 mycollection=mydatabase['urls']
@@ -35,7 +35,8 @@ def short():
             }
         
             record=mydatabase['urls'].insert_one(rec)
-            new_url="https://phoneix-url-short.herokuapp.com/"+code
+            # new_url="https://phoneix-url-short.herokuapp.com/"+code
+            new_url="127.0.0.1"+code
             return render_template('success.html',new_url=new_url)
         else:
             flash('Code is already in use Please Try Again with Different Code')
