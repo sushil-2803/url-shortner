@@ -35,7 +35,7 @@ def short():
             }
         
             record=mydatabase['urls'].insert_one(rec)
-            new_url="127.0.0.1:5000/"+code
+            new_url="https://phoneix-url-short.herokuapp.com/"+code
             return render_template('success.html',new_url=new_url)
         else:
             flash('Code is already in use Please Try Again with Different Code')
