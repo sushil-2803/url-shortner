@@ -46,7 +46,7 @@ def redirection(code):
     query=mydatabase['urls'].find_one({'code':code})
     if query is None:
         flash("NO SUCH CODE")
-        return render_template('home.html')
+        return redirect(url_for('home'))
     else:
         rurl=query['long_url']
         return redirect(rurl)
