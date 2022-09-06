@@ -39,7 +39,7 @@ def short():
             return render_template('success.html',new_url=new_url)
         else:
             flash('Code is already in use Please Try Again with Different Code')
-            return render_template('home.html')
+            return redirect(url_for('home'))
         
 @app.route('/<string:code>')
 def redirection(code):
