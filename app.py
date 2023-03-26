@@ -7,8 +7,13 @@ app= Flask(__name__)
 app.secret_key='wreyuiyhsfkdl972348v7897v9080kljvkjhgv8709HKJHG0jf'
 clinet =MongoClient()
 
+<<<<<<< HEAD
 client = MongoClient("mongodb+srv://flyingphoneix:8X3XxDdtDN5oWtkv@cluster0.fkh5xnp.mongodb.net/?retryWrites=true&w=majority")
 # client = MongoClient('mongodb://localhost:27017/')
+=======
+# client =
+client = MongoClient('mongodb://localhost:27017/')
+>>>>>>> 46fd6da86071bfd094986ea7746b5e030a2ee1a6
 mydatabase = client['url_shortner']
 
 mycollection=mydatabase['urls']
